@@ -1,0 +1,195 @@
+#logo{
+
+    position: relative;
+    top: 1vw;
+    left: 0.5vw;
+    width: 3vw;
+    padding-bottom: 2vw ;
+    transition: all 0.15s ease;
+
+}
+
+.leftNavCont:hover #logo{
+
+    left: 0.5vw;
+    width: 6vw;
+    transition: all 0.2s ease;
+
+}
+
+.leftNavCont { 
+    
+    position: fixed;
+    width: 4vw;
+    top:0;
+    height: 100vh;
+    z-index: 100;
+    background-color: #202020;
+    overflow:hidden;
+    transition:width .1s ease;
+    cursor:pointer;
+    box-shadow:4px 7px 10px rgba(0,0,0,.4);
+
+}
+
+.leftNavCont:hover {
+    width:14vw;
+}
+
+.leftNavCont:hover .leftNavItem a{
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.leftNav {
+    height: 85%;
+    list-style-type: none;
+    color:white;
+    padding-left: 0;
+}
+
+.leftNav:first-child {
+    padding-top: 15vw;
+}
+
+.leftNavItem {
+    padding-bottom:1.5vw;
+    margin-bottom: 3vw;
+    font-family: 'roboto';
+    transition: all 0.1s ease;
+}
+
+
+.leftNavItem a{
+    position: absolute;
+    right: 0;
+    padding-right:0.7vw;
+    margin: right 0.5vw;
+    width: 9vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.4vw;
+    display: block;
+    text-decoration: none;
+    color:white;
+    font-family: 'roboto';
+    font-weight: 100;
+    font-size: 1.35vw;
+    opacity: 0;
+    transition:all .1s ease;
+}
+
+.leftNavItem a:after {
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    border-radius:2px;
+    background:radial-gradient(circle at 93.02% 88.03%, #6ac030, transparent 100%);
+    opacity:0;
+    transition:all .1s ease;
+    z-index: -10;
+}
+
+.leftNavItem:hover a:after {
+    opacity:1;
+}
+
+.sideMenuImage{
+
+    position: absolute;
+    width: 3vw;
+    margin-left: 0.5vw;
+    transition: all 0.2s ease;
+
+}
+
+#leftNavContUserPanel{
+
+    position: absolute;
+    bottom: 0;
+    width: 13.8vw;
+    height: 12vw;
+    opacity: 0;
+    overflow:hidden;
+    color: white;
+    font-size: 0;
+    transition: all .1s ease;
+    background-color: #303030b4;
+    border-radius: 5px;
+    border-color: rgba(143, 143, 143, 0.2);
+    border-width: 2px;
+    border-style: dashed;
+    
+}
+
+.leftNavCont:hover #leftNavContUserPanel{
+    
+    opacity: 1;
+    font-size: 0.5vw;
+    
+}
+
+#logoutButtonCont{
+    
+    position: absolute;
+    bottom: 3vw;
+    float:  right;
+    right:  0;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+        
+}
+
+
+#logoutButtonCont a{
+    
+    width: 5vw;
+    margin-bottom: 0;
+    font-size: 1vw;
+    padding-right: 0.5vw;
+    padding-top: 0;
+    padding-bottom: 0;
+    background:radial-gradient(circle at 93.02% 88.03%, #8b220271, transparent 100%);
+    
+}
+
+#logoutButtonCont a:after{
+
+    background:radial-gradient(circle at 93.02% 88.03%, #d84f25, transparent 100%);
+    
+}
+
+#loginButtonCont{
+    
+    position: absolute;
+    bottom: 1.5vw;
+    float:  right;
+    right:  0;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    
+}
+
+#loginButtonCont a{
+    
+    width: 5vw;
+    margin-bottom: 0;
+    font-size: 1vw;
+    padding-right: 0.5vw;
+    padding-top: 0;
+    padding-bottom: 0;
+    background:radial-gradient(circle at 93.02% 88.03%, #51cc1857, transparent 100%);
+    
+    
+    
+}
+
+#loginButtonCont a:after{
+
+    background:radial-gradient(circle at 93.02% 88.03%, #75eb15e3, transparent 100%);
+    
+}

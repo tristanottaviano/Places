@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Places</title>
+        <link href="MainPage.css" rel="stylesheet">
+        <link href="Modal.css" rel="stylesheet">
+        <link href="SideMenu.css" rel="stylesheet">
+        <link href="TopMenu.css" rel="stylesheet">
+        <link href="List.css" rel="stylesheet">
+        <link href="Slider.css" rel="stylesheet">
+        <link href="StarRating.css" rel="stylesheet">
+        <link rel="shortcut icon" href="#">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <meta charset="UTF-8">
+        
+        <style type="text/css">
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;  
+            }
+            </style>
+    
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script type="text/javascript" src="MainPage.js"></script>
+        <script type="text/javascript" src="User.js"></script>
+        <script type="text/javascript" src="Maps.js"></script>
+        <script type="text/javascript" src="Friends.js"></script>
+        <script type="text/javascript" src="Comment.js"></script>
+        <script type="text/javascript" src="Photo.js" defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkyETtYbq8PPrVpUvUG1LZ2zcpbi-p8cc&callback=initMap&libraries=&v=weekly" async></script>
+
+    </head>    
+    
+    <body>
+        <div id="map"></div>  
+
+        <!-- createPin modal -->
+        <div id="createPinModal" class="modal">        
+            
+            <!-- createPin modal content -->
+            <div class="modalContent" id="createPinModalContent">
+                
+                <div class="modalHeader">
+                    <span class="close" id="closeCreatPinModal">&times;</span>            
+                    <h2>Create Pin</h2>
+                </div>
+
+                <div class="modalBody" id = "createPinModalContentBody">
+                    <input [type = "text"] id = "creatPinModalName" placeholder="Pin name">  </input> 
+                    <input [type = "text"] id = "creatPinModalDescription" placeholder="Pin description (200 characters max)">  </input>
+                    <input [type = "text"] id = "creatPinModalTags" placeholder="Tags (separated by spaces)">  </input> 
+                </div>
+                    
+                <div class="modalFooter" id="createPinModalFooter">
+                    <button id = "creatPinModalCreatePinButton"> Add pin </button>
+                    <button id = "creatPinModalCancelButton"> Cancel </button>    
+                </div>
+        
+            </div> 
+        
+        </div> 
+        
+
+        <!-- editPin modal -->
+        <div id="editPinModal" class="modal">        
+            
+            <!-- editPin modal content -->
+            <div class="modalContent" id="editPinModalContent">
+                
+                <div class="modalHeader">
+                    <span class="close" id="closeEditPinModal">&times;</span>            
+                    <h2>Edit Pin</h2>
+                </div>
+
+                <div class="modalBody" id = "editPinModalContentBody">
+                    <input [type = "text"] id = "editPinModalName" placeholder="Pin name">  </input> 
+                    <input [type = "text"] id = "editPinModalDescription" placeholder="Pin description (200 characters max)">  </input> 
+                    <input [type = "text"] id = "editPinModalTags" placeholder="Tags (separated by spaces)">  </input> 
+                </div>
+                    
+                <div class="modalFooter" id="editPinModalFooter">
+                    <button id = "editPinModalEditPinButton"> Edit pin </button>
+                    <button id = "editPinModalCancelButton"> Cancel </button>    
+                </div>
+        
+            </div> 
+        
+        </div> 
+
+        <!-- addUser modal -->
+        <div id="createUserModal" class="modal">        
+            
+            <!-- createUser modal content -->
+            <div class="modalContent" id="createUserModalContent">
+                
+                <div class="modalHeader">
+                    <span class="close" id="closeCreateUserModal">&times;</span>            
+                    <h2>Create User</h2>
+                </div>
+
+                <div class="modalBody" id = "createUserModalContentBody">
+                    <input [type = "text"] id = "createUserModalUsername" placeholder="Username">  </input> 
+                    <input [type = "text"] id = "createUserModalBio" placeholder="Bio (200 characters max)">  </input> 
+                    <input type = "password" id = "createUserModalPassword" placeholder="Password">  </input> 
+                </div>
+                    
+                <div class="modalFooter" id="createUserModalFooter">
+                    <button id = "createUserModalCreateUserButton"> Create User </button>
+                    <button id = "createUserModalCancelButton"> Cancel </button>    
+                </div>
+        
+            </div> 
+        
+        </div>
+
+          <!-- Login modal -->
+          <div id="loginModal" class="modal">        
+            
+            <!-- Login modal content -->
+            <div class="modalContent" id="loginModalContent">
+                
+                <div class="modalHeader">
+                    <span class="close" id="closeLoginModal">&times;</span>            
+                    <h2>Login</h2>
+                </div>
+
+                <div class="modalBody" id = "loginModalContentBody">
+                    <input [type = "text"] id = "loginModalUsername" placeholder="Username">  </input> 
+                    <input type = "password" id = "loginModalPassword" placeholder="Password">  </input> 
+                </div>
+                    
+                <div class="modalFooter" id="loginModalFooter">
+                    <button id = "loginModalLoginButton">Login </button>
+                    <button id = "loginModalCancelButton"> Cancel </button>    
+                    <button id = "loginModalcreateUserButton">New account </button>
+                </div>
+        
+            </div> 
+        
+        </div> 
+
+
+        <!-- myFriends modal -->
+        <div id="myFriendsModal" class="modal">        
+                    
+            <!-- myFriends modal content -->
+            <div class="modalContent" id="myFriendsModalContent">
+                
+                <div class="modalHeader">
+                    <span class="close" id="closeMyFriendsModal">&times;</span>            
+                    <h2>My Friends</h2>
+                </div>
+
+                <div class="modalBody" id = "myFriendsModalContentBody">
+
+                    <ul id = "myFriendsModalFriendsList" class = "list"> 
+
+                
+
+                    </ul>
+
+                </div>
+                    
+                <div class="modalFooter" id="myFriendsModalFooter">
+                    <button id = "myFriendsModalAddFriendsButton">Add a Friend </button>
+                    <button id = "myFriendsModalCancelButton"> Cancel </button>    
+                </div>
+
+            </div> 
+
+        </div> 
+
+        <!-- MyMaps modal -->
+        <div id="myMapsModal" class="modal">        
+                    
+            <!-- myMaps modal content -->
+            <div class="modalContent" id="myMapsModalContent">
+                
+                <div class="modalHeader">
+                    <span class="close" id="closeMyMapsModal">&times;</span>            
+                    <h2 id= "myMapsModalTitle">My Maps</h2>
+                </div>
+
+                <div class="modalBody" id = "myMapsModalContentBody">
+
+                    <ul id = "myMapsModalMapsList" class = "list"> 
+
+                
+
+                    </ul>
+
+                </div>
+                    
+                <div class="modalFooter" id="myMapsModalFooter">
+                    <button id = "myMapsModalCreateMapsButton">New Map </button>
+                    <button id = "myMapsModalCancelButton"> Cancel </button>    
+                </div>
+
+            </div> 
+
+        </div> 
+
+        <!-- addFriends modal -->
+        <div id="addFriendsModal" class="modal">        
+            
+            <!-- addFriends modal content -->
+            <div class="modalContent" id="addFriendsModalContent">
+                
+                <div class="modalHeader">
+                    <span class="close" id="closeAddFriendsModal">&times;</span>            
+                    <h2>Follow a friend</h2>
+                </div>
+
+                <div class="modalBody" id = "addFriendsModalContentBody">
+                    <input [type = "text"] id = "addFriendsModalUsername" placeholder="Username">  </input> 
+                </div>
+                    
+                <div class="modalFooter" id="addFriendsModalFooter">
+                    <button id = "addFriendsModalAddFriendsButton"> Follow </button>
+                    <button id = "addFriendsModalCancelButton"> Cancel </button>    
+                </div>
+        
+            </div> 
+        
+        </div>
+
+        <!-- publicMaps modal -->
+        <div id="publicMapsModal" class="modal">        
+            
+            <!-- publicMaps modal content -->
+            <div class="modalContent" id="publicMapsModalContent">
+                
+                <div class="modalHeader">
+                    <span class="close" id="closePublicMapsModal">&times;</span>            
+                    <h2>Public Maps</h2>
+                </div>
+
+                <div class="modalBody" id = "publicMapsModalContentBody">
+
+                    <ul id = "publicMapsModalMapsList" class = "list"> 
+
+                    </ul>
+
+                </div>
+                    
+                <div class="modalFooter" id="publicMapsModalFooter">
+                    <button id = "publicMapsModalCancelButton"> Cancel </button>    
+                </div>
+
+            </div> 
+
+        </div> 
+        
+
+        <!-- photo modal -->
+        <div id="photoModal" class="modal">        
+            
+            <!-- photo modal content -->
+            <div class="modalContent" id="photoModalContent">
+                
+                <div class="modalHeader">
+                    <span class="close" id="closePhotoModal">&times;</span>            
+                    <h2 id="photoModalTitle">Pictures</h2>
+                </div>
+
+                <div class="modalBody" id = "photoModalContentBody">
+
+                    <ul id = "photoModalPhotoList" class = "horizontalList"> 
+
+                    </ul>
+
+                </div>
+                    
+                <div class="modalFooter" id="photoModalFooter">
+                    <button id = "photoModalAddPhotoButton"> Add Picture </button>    
+                    <button id = "photoModalCancelButton"> Cancel </button>    
+                </div>
+
+            </div> 
+
+        </div> 
+
+        <!-- addPhoto modal -->
+        <div id="addPhotoModal" class="modal">        
+                    
+            <!-- addPhoto modal content -->
+            <div class="modalContent" id="addPhotoModalContent">
+                
+                <div class="modalHeader">
+                    <span class="close" id="closeAddPhotoModal">&times;</span>            
+                    <h2 id="addPhotoModalTitle">Add a picture</h2>
+                </div>
+
+                <div class="modalBody" id = "addPhotoModalContentBody">
+
+                    <input type="file" id="inputFileToLoad" style="display: none;" accept=".png,.jpeg"/>
+                    <input id="addPhotoModalBrowseButton" type="button" value="Browse" onclick="document.getElementById('inputFileToLoad').click();"/>
+                    
+                    <div class="horizontalListItem"> <div class= "imageCont" > <img id="photoPreview" src="" class = "photoListItem" > </div> </div>
+
+                </div>
+                    
+                <div class="modalFooter" id="addPhotoModalFooter">
+                    <button id = "addPhotoModalAddButton"> Add  </button>    
+                    <button id = "addPhotoModalCancelButton"> Cancel </button>    
+                </div>
+
+            </div> 
+
+        </div> 
+
+        <!-- createMaps modal -->
+        <div id="createMapsModal" class="modal">        
+                    
+            <!-- createMaps modal content -->
+            <div class="modalContent" id="createMapsModalContent">
+                
+                <div class="modalHeader">
+                    <span class="close" id="closeCreateMapsModal">&times;</span>            
+                    <h2>Create Map</h2>
+                </div>
+
+                <div class="modalBody" id = "createMapsModalContentBody">
+                    <input [type = "text"] id = "createMapsModalTitle" placeholder="Title">  </input> 
+                    <input [type = "text"] id = "createMapsModalDescription" placeholder="Description (200 characters max)">  </input> 
+                    <input [type = "text"] id = "createMapsModalTags" placeholder="Tags">  </input> 
+                    
+                    <div class = "toggleOptionCont">
+                        <span class = "switchText">Public</span>
+                        <span class="switchCont">
+                            <label class="switch">
+                                <input type="checkbox" id="createMapsModalPublicSlider">
+                                <span class="slider round"></span>
+                            </label>
+                        </span>
+                    </div>
+
+                </div>
+                    
+                <div class="modalFooter" id="createMapsModalFooter">
+                    <button id = "createMapsModalCreateMapsButton"> Create </button>
+                    <button id = "createMapsModalCancelButton"> Cancel </button>    
+                </div>
+
+            </div> 
+
+        </div>  
+
+        <!-- editMaps modal -->
+        <div id="editMapsModal" class="modal">        
+                    
+            <!-- editMaps modal content -->
+            <div class="modalContent" id="editMapsModalContent">
+                
+                <div class="modalHeader">
+                    <span class="close" id="closeEditMapsModal">&times;</span>            
+                    <h2>Edit Map</h2>
+                </div>
+
+                <div class="modalBody" id = "editMapsModalContentBody">
+                    <input [type = "text"] id = "editMapsModalTitle" placeholder="Title">  </input> 
+                    <input [type = "text"] id = "editMapsModalDescription" placeholder="Description (200 characters max)">  </input> 
+                    <input [type = "text"] id = "editMapsModalTags" placeholder="Tags">  </input> 
+
+                    <div class = "toggleOptionCont">
+                        <span class = "switchText">Public</span>
+                        <span class = "switchCont">
+                            <label class="switch">
+                                <input type="checkbox" id="editMapsModalPublicSlider">
+                                <span class="slider round"></span>
+                            </label>
+                        </span>
+                    </div>
+
+
+                </div>
+                    
+                <div class="modalFooter" id="editMapsModalFooter">
+                    <button id = "editMapsModalEditMapsButton"> Edit </button>
+                    <button id = "editMapsModalCancelButton"> Cancel </button>    
+                </div>
+
+            </div> 
+
+        </div> 
+
+
+        <!-- comment modal -->
+        <div id="commentModal" class="modal">        
+                    
+            <!-- comment modal content -->
+            <div class="modalContent" id="commentModalContent">
+                
+                <div class="modalHeader">
+                    <span class="close" id="closeCommentModal">&times;</span>            
+                    <h2 id= "commentModalTitle"> Comments </h2>
+                </div>
+
+                <div class="modalBody" id = "commentModalContentBody">
+
+                    <ul id = "commentModalCommentList" class = "list"> 
+
+
+                    </ul>
+
+                </div>
+                    
+                <div class="modalFooter" id="commentModalFooter">
+                    <button id = "commentModalAddCommentButton">Add a comment</button>
+                    <button id = "commentModalCancelButton"> Cancel </button>    
+                </div>
+
+            </div> 
+
+        </div> 
+
+        <!-- friendRequest modal -->
+        <div id="friendRequestModal" class="modal">        
+                            
+            <!-- friendRequest modal content -->
+            <div class="modalContent" id="friendRequestModalContent">
+                
+                <div class="modalHeader">
+                    <span class="close" id="closeFriendRequestModal">&times;</span>            
+                    <h2 id= "friendRequestModalTitle"> Friend Requests </h2>
+                </div>
+
+                <div class="modalBody" id = "friendRequestModalContentBody">
+
+                    <ul id = "friendRequestModalFriendRequestList" class = "list"> 
+
+                
+
+                    </ul>
+
+                </div>
+                    
+                <div class="modalFooter" id="friendRequestModalFooter">
+                    <button id = "friendRequestModalCancelButton"> Cancel </button>    
+                </div>
+
+            </div> 
+
+        </div> 
+
+        <!-- confirmFriend modal -->
+        <div id="confirmFriendModal" class="modal">        
+                            
+            <!-- confirmFriend modal content -->
+            <div class="modalContent" id="confirmFriendModalContent">
+                
+                <div class="modalHeader">
+                    <span class="close" id="closeConfirmFriendModal">&times;</span>            
+                    <h2 id= "confirmFriendModalTitle">Confirm</h2>
+                </div>
+
+
+                <div class="modalBody" id = "confirmFriendModalContentBody">
+                </div>
+
+                <div class="modalFooter" id="confirmFriendModalFooter">
+                    <button id = "confirmFriendModalAcceptButton"> Accept </button> 
+                    <button id = "confirmFriendModalDenyButton"> Deny </button> 
+                </div>
+
+            </div> 
+
+        </div> 
+
+        <!-- addComment modal -->
+        <div id="addCommentModal" class="modal">        
+                    
+            <!-- addComment modal content -->
+            <div class="modalContent" id="addCommentModalContent">
+                
+                <div class="modalHeader">
+                    <span class="close" id="closeAddCommentModal">&times;</span>            
+                    <h2>Add Comment</h2>
+                </div>
+
+                <div class="modalBody" id = "addCommentModalContentBody">
+                    <input [type = "text"] id = "addCommentModalTitle" placeholder="Title">  </input> 
+                    <input [type = "text"] id = "addCommentModalComment" placeholder="Comment (200 characters max)">  </input> 
+                </div>
+
+                <!-- Star rating-->
+                <form id = "ratingForm">
+                    <div class="rating">
+                        <input type="radio" name="rating" id="rating-5" value=5>
+                        <label for="rating-5"></label>
+                        <input type="radio" name="rating" id="rating-4" value=4>
+                        <label for="rating-4"></label>
+                        <input type="radio" name="rating" id="rating-3" value=3>
+                        <label for="rating-3"></label>
+                        <input type="radio" name="rating" id="rating-2" value=2>
+                        <label for="rating-2"></label>
+                        <input type="radio" name="rating" id="rating-1" value=1>
+                        <label for="rating-1"></label>
+                    </div>
+                </form>
+                    
+                <div class="modalFooter" id="addCommentModalFooter">
+                    <button id = "addCommentModalAddCommentButton"> Add </button>
+                    <button id = "addCommentModalCancelButton"> Cancel </button>    
+                </div>
+
+            </div> 
+
+        </div>  
+
+
+        <!-- SIDEBAR -->
+        
+        <nav class="leftNavCont">
+
+            <img src="Resource/PlacesLogo_150px" alt="PlacesLogo" id="logo">
+            
+            <ul class="leftNav">
+            
+                <li class="leftNavItem" id="publicMapsItem">
+                    <img src="Resource/PublicMaps.png" class="sideMenuImage" id="publicMapsImage">
+                    <a id = "publicMapsButton">Public Map</a>
+                </li>
+           
+                <li class="leftNavItem" id="addPinItem">
+                    <img src="Resource/AddPin.png" class="sideMenuImage" id="addPinImage">
+                    <a id = "addPinButton">Add Pin</a>
+                </li>
+                
+                <li class="leftNavItem" id="myFriendsItem">
+                    <img src="Resource/MyFriend.png" class="sideMenuImage" id="myFriendsImage">
+                    <a id = "myFriendsButton">My Friends</a>
+                </li>
+                
+                <li class="leftNavItem" id="myMapsItem">
+                    <img src="Resource/MyMaps.png" class="sideMenuImage" id="myMapsImage">
+                    <a id = "myMapsButton">My Maps</a>
+                </li>
+
+                <li class="leftNavItem" id="requestItem">
+                    <img src="Resource/AddFriend.png" class="sideMenuImage" id="requestImage">
+                    <a id = "friendRequestButton">Friend Request</a>
+                </li>
+
+                
+            </ul>
+            
+            <div id = "leftNavContUserPanel">
+
+                <h1 id = "leftNavContUserPanelUsername">Not Logged in</h1>
+                <p id="leftNavContUserPanelBio"></p>
+                
+                <li class="leftNavItem" id = "loginButtonCont">
+                    <a id = "loginButton">Login</a>
+                </li>
+
+                <li class="leftNavItem" id = "logoutButtonCont">
+                    <a id = "logoutButton">Disconnect</a>
+                </li>
+
+            </div>
+
+        </nav>
+
+        <!-- SIDEBAR END -->
+        
+
+        <!-- TOPBAR PIN -->
+        
+        <nav class="topNavCont">
+       
+            <h1 id = "selectionTitle">Default Title</h1>
+            
+            <div id = "selectionDescriptionCont">
+                
+                <p id = "selectionDescription">Default Description</p>
+            
+            </div>
+            
+            <p id = "selectionTags">Default Tags</p>
+            
+            <div id="topNavButtonPanel">
+
+                <button class="defaultButton" id="deletePinButton" type="button">
+                    <img src="Resource/Trash.png" class="topMenuImage" id="deletePinImage">
+                </button>
+                
+                <button class="defaultButton" id="editPinButton" type="button">
+                    <img src="Resource/pencil-tip.png" class="topMenuImage" id="editPinImage">
+                </button>
+
+                <button class="defaultButton" id="commentPinButton" type="button">
+                    <img src="Resource/Comment.png" class="topMenuImage" id="commentPinImage">
+                </button>
+
+                <button class="defaultButton" id="findWayButton" type="button">
+                       <img src="Resource/findWay.png" class="topMenuImage" id="commentPinImage"> 
+                </button>
+
+                <button class="defaultButton" id="photoButton" type="button">
+                    <img src="Resource/Photo.png" class="topMenuImage" id="commentPinImage"> 
+                </button>
+                                
+                <div id="directionTypeCont"> 
+                    
+                    <div> 
+                        <div class="checkCont">
+                            <input type="radio" id="directionTypeWalking" name="directionType" value='WALKING' checked="checked">
+                            <span class="checkmark"></span>
+                        </div>
+                        <label for="WALKING">Walking
+                        </label>
+                    </div>
+    
+                    <div> 
+                        <div class="checkCont">
+                            <input type="radio" id="directionTypeBicycleing" name="directionType" value='BICYCLING'>
+                            <span class="checkmark"></span>
+                        </div>
+                        <label for="BICYCLING">Bicycle    
+                        </label>
+                    </div>
+    
+                    <div> 
+                        <div class="checkCont">
+                            <input type="radio" id="directionTypeDriving" name="directionType" value='DRIVING'>
+                            <span class="checkmark"></span>
+                        </div>
+                        <label for="DRIVING">Car
+                        </label>
+                    </div>
+    
+                    <div> 
+                        <div class="checkCont">
+                            <input type="radio" id="directionTypeTransit" name="directionType" value='TRANSIT'>
+                            <span class="checkmark"></span>
+                        </div>
+                        <label for="TRANSIT">Transit
+                        </label>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+        <!-- TOPBAR PIN END -->
+
+
+
+    </body>
+
+</html>

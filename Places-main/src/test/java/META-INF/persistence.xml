@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+    xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+    <!-- Test configuration -->
+    <persistence-unit name="BDD">
+    	<class>com.Places.dao.Comment</class>
+    	<class>com.Places.dao.CommentContainer</class>
+    	<class>com.Places.dao.Map</class>
+    	<class>com.Places.dao.MapContainer</class>
+    	<class>com.Places.dao.Pin</class>
+    	<class>com.Places.dao.PinContainer</class>
+    	<class>com.Places.dao.User</class>
+    	<class>com.Places.dao.UserContainer</class>
+        <exclude-unlisted-classes/>
+        
+        <properties>
+            <property name="javax.jdo.option.ConnectionURL" value="jdbc:hsqldb:mem:BDD"/>
+            <property name="javax.jdo.option.ConnectionDriverName" value="org.hsqldb.jdbcDriver"/>
+            <property name="javax.jdo.option.ConnectionUserName" value="SA"/>
+            <property name="javax.jdo.option.ConnectionPassword" value=""/>
+            <property name="javax.jdo.option.Mapping" value="hsql"/>
+
+            <property name="datanucleus.schema.autoCreateAll" value="true"/>
+            <property name="datanucleus.schema.validateAll" value="false"/>
+            <property name="datanucleus.metadata.defaultInheritanceStrategy" value="TABLE_PER_CLASS"/> 
+            <property name="datanucleus.maxFetchDepth" value="4"/>
+			<property name="javax.jdo.PersistenceManagerFactoryClass" value="org.datanucleus.api.jdo.JDOPersistenceManagerFactory"/>
+        </properties>
+        
+    </persistence-unit>
+
+</persistence>

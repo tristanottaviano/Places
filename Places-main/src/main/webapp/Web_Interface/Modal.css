@@ -1,0 +1,552 @@
+
+/*
+Modal Implementation
+*/
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 999; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modalContent {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 10px solid  rgb(0, 0, 0);
+    width: 70%; 
+    border-radius: 10px;
+
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modalHeader {
+    padding: 0.1vw 1vw;
+    background-color: #222222;
+    color: white;
+    font-size: 1vw;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+
+}
+
+/* Modal Body */
+.modalBody {
+    border-radius: 10px;
+    padding: 1vw;
+}
+
+/* Modal Footer */
+.modalFooter {
+    padding: 0.8vw 1vw;
+    background-color: #222222;
+    color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Modal Content */
+.modalContent {
+    position: relative;
+    top: 30%;
+    background-color: #292929f3;
+    margin: auto;
+    padding: 0;
+    border: 1px solid rgb(0, 0, 0);
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: createPinModalAnimation;
+    animation-duration: 0.4s;
+}
+
+/*Animation */
+@keyframes createPinModalAnimation {
+    from {top: -300px; opacity: 0}
+    to {top: 30%; opacity: 1}
+} 
+
+
+.modalFooter button{
+
+    padding: 0;
+    font-size: 0.8vw;
+
+}
+
+#createPinModalContent{
+
+    width: 20%;
+
+}
+
+#creatPinModalName{
+
+    position: relative;
+    width: 95%;
+    margin-top: 3%;
+
+}
+
+#creatPinModalDescription{
+
+    position: relative;
+    width: 95%;
+    padding-bottom: 20%;
+    margin-top:2%;
+
+}
+
+
+#creatPinModalTags{
+
+    position: relative;
+    width: 95%;
+    margin-top:2%;
+    margin-bottom: 3%;
+
+}
+
+/*
+editPinModal Contents
+*/
+#editPinModalContent{
+
+    width: 20%;
+
+}
+
+#editPinModalName{
+
+    position: relative;
+    width: 95%;
+    margin-top: 3%;
+
+}
+
+#editPinModalDescription{
+
+    position: relative;
+    width: 95%;
+    padding-bottom: 20%;
+    margin-top:2%;
+
+}
+
+
+#editPinModalTags{
+
+    position: relative;
+    width: 95%;
+    margin-top:2%;
+    margin-bottom: 3%;
+
+}
+
+
+/*
+createUser modal
+*/
+
+#createUserModalContent{
+
+    width: 20%;
+
+}
+
+#createUserModalUsername{
+
+    position: relative;
+    width: 95%;
+    margin-top: 3%;
+
+}
+
+#createUserModalBio{
+
+    position: relative;
+    width: 95%;
+    padding-bottom: 20%;
+    margin-top:2%;
+
+}
+
+
+#createUserModalPassword{
+
+    position: relative;
+    width: 95%;
+    margin-top:2%;
+    margin-bottom: 3%;
+
+}
+  
+
+/*
+Login modal
+*/
+  
+#loginModalContent{
+  
+    width: 20%;
+
+}
+
+#loginModalUsername{
+
+    position: relative;
+    width: 95%;
+    margin-top: 3%;
+
+}
+
+
+#loginModalPassword{
+
+    position: relative;
+    width: 95%;
+    margin-top:2%;
+    margin-bottom: 3%;
+
+}
+
+#loginModalcreateUserButton{
+
+    right: 0;
+
+}
+
+
+/*
+myMaps modal
+*/
+
+#myMapsModalContent{
+
+    width: 30%;
+
+}
+
+#myMapsModalContentBody{
+
+    height: 15vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    
+}
+
+
+
+/*
+publicMaps modal
+*/
+
+#publicMapsModalContent{
+
+    width: 40vw;
+
+}
+
+#publicMapsModalContentBody{
+
+    height: 15vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    
+}
+
+
+/*
+myFriends modal
+*/
+
+#myFriendsModalContent{
+
+    width: 40vw;
+
+}
+
+#myFriendsModalContentBody{
+
+    height: 15vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    
+}
+
+
+/*
+addFriends Modal
+*/
+
+#addFriendsModalContent{
+  
+    width: 30vw;
+
+}
+
+#addFriendsModalUsername{
+
+    position: relative;
+    width: 95%;
+    margin-top: 3%;
+
+}
+
+/*
+createMaps modal
+*/
+#createMapsModalContent{
+
+    width: 30vw;
+
+}
+
+#createMapsModalTitle{
+
+    position: relative;
+    width: 95%;
+    margin-top: 3%;
+
+}
+
+#createMapsModalDescription{
+
+    position: relative;
+    width: 95%;
+    padding-bottom: 20%;
+    margin-top:2%;
+
+}
+
+
+#createMapsModalTags{
+
+    position: relative;
+    width: 95%;
+    margin-top:2%;
+    margin-bottom: 3%;
+
+}
+
+/*
+createMaps modal
+*/
+#editMapsModalContent{
+
+    width: 30vw;
+
+}
+
+#editMapsModalTitle{
+
+    position: relative;
+    width: 95%;
+    margin-top: 3%;
+
+}
+
+#editMapsModalDescription{
+
+    position: relative;
+    width: 95%;
+    padding-bottom: 20%;
+    margin-top:2%;
+
+}
+
+
+#editMapsModalTags{
+
+    position: relative;
+    width: 95%;
+    margin-top:2%;
+    margin-bottom: 3%;
+
+}
+
+/*
+addComment modal
+*/
+
+#addCommentModalContent{
+
+    width: 30vw;
+
+}
+
+#addCommentModalTitle{
+
+    position: relative;
+    width: 95%;
+    margin-top: 3%;
+
+}
+
+#addCommentModalComment{
+
+    position: relative;
+    width: 95%;
+    padding-bottom: 20%;
+    margin-top:2%;
+
+}
+
+
+/*
+comments modal
+*/
+
+#commentModalContent{
+
+    width: 40vw;
+
+}
+
+#commentModalContentBody{
+
+    height: 15vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    
+}
+
+/*
+friendRequest modal
+*/
+
+#friendRequestModalContent{
+
+    width: 40vw;
+
+}
+
+#friendRequestContentBody{
+
+    height: 15vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    
+}
+
+
+/*
+confirmFriend modal
+*/
+
+#confirmFriendModalContent{
+
+    width: 40vw;
+
+}
+
+#confirmFriendModalContentBody {
+
+    height: 3vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1.5vw;
+    padding-bottom: 0;
+    text-align: center;
+    color: #fefefe;
+    font-size: 1vw;
+    
+}
+
+
+/*
+confirmFriend modal
+*/
+
+#photoModalContent{
+
+    top: 10vw;
+    animation-name: photoModalAnimation;
+    animation-duration: 0.4s;
+
+}
+
+/*Animation */
+@keyframes photoModalAnimation {
+    from {top: -300px; opacity: 0}
+    to {top: 10vw; opacity: 1}
+} 
+
+
+#addPhotoModalContent{
+
+    top: 10vw;
+    width: 25vw;
+    animation-name: photoModalAnimation;
+    animation-duration: 0.4s;
+
+}
+
+
+#addPhotoModalContentBody{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#photoPreview{
+
+    width: 15vw;
+    height: 15vw;
+
+}
+
+#addPhotoModalBrowseButton{
+
+    width: 7vw;
+    height: 2vw;
+    margin-bottom: 1vw;
+    background-color: #222222;
+    border-radius: 10px;
+    border-color: rgba(20, 128, 20, 0.5);
+    border-width: 1px;
+    border-style: dashed;
+    color: aliceblue;
+    transition: all 0.1s ease;
+
+}
+
+
+#addPhotoModalBrowseButton:hover{
+
+    background-color: #383737;
+    transition: all 0.1s ease;
+
+}

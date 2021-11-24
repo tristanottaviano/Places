@@ -1,0 +1,85 @@
+
+.toggleOptionCont{
+    
+  width: 100%;
+  display: inline;
+
+}
+
+.switchCont{
+
+  position: relative;
+    margin-left: 0.3vw;
+    
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-flex;
+  width: 2vw;
+  height: 1.2vw;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switchText {   
+  color: rgb(235, 235, 235);
+  width: 1vw;
+  font-size: 1vw;
+  margin: 0;
+}
+  
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.2vw;
+  width: 1.2vw;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+input:checked + .slider {
+  background-color: #23a817;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #23a817;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(0.9vw);
+  -ms-transform: translateX(0.9vw);
+  transform: translateX(0.9vw);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 5vw;
+}
+
+.slider.round:before {
+  border-radius: 50vw;
+}

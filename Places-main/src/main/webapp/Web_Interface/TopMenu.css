@@ -1,0 +1,233 @@
+.topNavCont {
+    position: fixed;
+    width: 60%;
+    height: 3vw;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    top:0;
+    right: 20%;
+    z-index: 100;
+    background-color: #464545d0;
+    overflow:hidden;
+    transition:height .2s ease;
+    cursor:pointer;
+}
+.topNavCont:hover {
+    height: 14vw;
+}
+
+.topNavCont button{
+    opacity: 0;
+    transition:opacity 0.2s ease;
+
+}
+
+.topNavCont:hover button{
+    opacity: 1;
+}
+
+#selectionTitle {
+    margin-top: 0.4vw;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: 'Roboto';
+    font-weight: 100;
+    font-size: 1.8vw;
+    text-transform:uppercase;
+    color:white;
+    letter-spacing:5px;
+    text-shadow:10px 10px 10px rgba(0,0,0,.3);
+}
+  
+#selectionDescription {
+    font-family: 'Roboto';
+    font-weight: 100;
+    font-size: 1vw;
+    color:white;
+    letter-spacing:2px;
+}
+ 
+#selectionDescriptionCont {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.3);
+    border-style: dotted;
+    border-radius: 10px;
+    margin-top: 0.5vw;
+    text-align: center;
+    height: 5vw;
+    margin-left: 7%;
+    margin-right: 7%;
+    padding: 1%;
+
+}
+
+#selectionTags {
+    text-transform:uppercase;
+    font-family: 'Roboto';
+    font-size: 0.7vw;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 1%;
+    margin-bottom: 0;
+    color:rgb(179, 179, 179);
+    letter-spacing:2px;
+
+}
+
+#topNavButtonPanel{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 86%;
+    height: 25%;
+    margin-left: 7%;
+    margin-right: 7%;
+
+}
+
+#topNavButtonPanel button{
+
+    width: 3vw;
+    height: 80%;
+
+}
+
+#commentPinButton{
+
+    bottom: 0;
+    right: 6vw;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+}
+
+#editPinButton{
+
+    bottom: 0;
+    right: 3vw;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+}
+
+#deletePinButton{
+
+    bottom: 0;
+    right: 0vw;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: rgba(119, 70, 70, 0.479);
+
+}
+#deletePinButton:hover{
+
+    background-color: rgb(139, 68, 68);
+
+}
+
+#photoButton{
+
+    bottom: 0;
+    right: 9vw;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+}
+
+#findWayButton{
+
+    bottom: 0;
+    right: 9vw;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    
+}
+
+
+#directionTypeCont{
+    
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    height: 1.2vw;
+    width: 17vw;
+    left: 3.8vw;
+    background-color: rgba(167, 167, 167, 0.39);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding-bottom: 0.2vw;
+    opacity: 0;
+    transition: all 0.2s ease;
+
+}
+
+.topNavCont:hover #directionTypeCont{
+    
+    opacity: 1;
+    transition: all 0.2s ease;
+
+}
+
+
+#directionTypeCont div{
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+#directionTypeCont div>label{
+
+    font-size: 0.7vw;
+    font-family: 'Roboto';
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 0.8vw;
+    margin-left: 0.2vw;
+    padding-top: 0.3vw;
+
+}
+
+.checkCont{
+
+    position: relative;
+    padding: 0.2vw;
+    
+}
+
+.checkCont>input{
+    
+    z-index: 999;
+    cursor: pointer;
+    opacity: 0;
+    margin: 0;
+    width: 1vw;
+    height: 1vw;
+
+}
+
+.checkmark {
+    position: absolute  ;
+    height: 1vw;
+    width: 1vw;
+    background-color: #eee;
+    border-radius: 50%;
+}
+  
+.checkCont:hover .checkmark {
+    background-color: rgb(156, 156, 156);
+}
+  
+.checkCont input:checked ~ .checkmark {
+    background-color: #199b2e;
+}
+  
+.topMenuImage{
+
+    width: 2.3vw;
+    top: 0.4vw;
+
+}

@@ -1,0 +1,159 @@
+:root{
+    --topPanelHeight: 20%;
+    --leftPanelWidth: 15%;
+    --currentPinPanelheight: 55%
+  }
+
+#map {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+#topPanel{
+    
+    position: absolute;
+    height:var(--topPanelHeight);
+    width: calc(100% - var( --leftPanelWidth));
+    left: var(--leftPanelWidth);
+    background-color: rgba(200,200,200,0.8);
+    text-align: center;
+    z-index: 1;
+
+}
+
+#leftPanel{
+    
+    position: absolute;
+    height:100%;
+    width: var(--leftPanelWidth);
+    background-color: rgba(230,230,230,1);
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    z-index: 1;
+
+    /*TODO*/
+    opacity: 0;
+
+}
+
+#mapTitle{
+
+    font-weight: bold;
+    font-size: 200%;
+
+}
+
+#mapDescriton{
+
+    font-weight: lighter;
+
+}
+
+#navigationButtonPanel{
+
+    position: absolute;
+    top: 160px;
+    left: 0%;
+    height: 300px;
+    width: 100%;
+
+}
+
+.commentButton{
+
+    border: 0;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    font-size: 0.5rem;
+    border-radius: 10px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgba(20, 20, 20, 0.5);
+    text-align: center;
+    background-color: rgb(220, 220, 220);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+
+}
+
+.commentButton:hover {
+    background-color: rgb(220, 220, 255);
+}
+
+.commentButton:active {
+    box-shadow: inset -1px -1px 2px rgba(255, 255, 255, .2),
+                inset 1px 1px 2px rgba(100, 100, 100, .2);
+    border-color: rgb(100, 100, 255);
+}
+
+.defaultButton{
+
+    border: 0;
+    position: absolute;
+    font-size: 0.5rem;
+    border-radius: 10px;
+    border-style: solid;
+    text-align: center;
+    align-items: center;
+    padding: 0;
+    background-color: rgba(120, 120, 120,0.6);
+
+}
+
+.defaultButton:hover {
+    background-color: rgb(120, 120, 120);
+}
+
+.defaultButton:active {
+    background-color: rgb(130, 130, 130);
+}
+
+#findWayButton{
+    
+    bottom: 1%;
+    left: 10px;
+    width: 40%;
+
+    
+}
+
+#currentPinPanel{
+
+    width: 90%;
+    background-color: rgba(0, 0, 0, .05);
+    position: absolute;
+    border-top-style: solid;
+    border-width: 2px;
+    height: var(--currentPinPanelheight);
+    bottom: 0px;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;   
+
+}
+
+#pinTags{
+
+    position: absolute;
+    width: 50%;
+    height: 5%;
+    bottom: 10%;
+    left: 10px;
+    background-color: rgb(190, 190, 190);
+
+}
+
+#pinTagsContent{
+
+    position: absolute;
+    width: 100%;
+
+}
+
